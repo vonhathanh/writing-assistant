@@ -36,7 +36,8 @@ $ yarn install
 
 ```bash
 # development
-$ yarn run start
+# we use swc for faster compilation
+$ yarn run start --b -b swc
 
 # watch mode
 $ yarn run start:dev
