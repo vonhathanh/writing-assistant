@@ -31,6 +31,9 @@
 ```bash
 $ yarn install
 ```
+```bash
+$ yarn add @nestjs/typeorm typeorm pg
+```
 
 ## Compile and run the project
 
