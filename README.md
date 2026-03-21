@@ -30,8 +30,6 @@
 
 ```bash
 $ yarn install
-```
-```bash
 $ yarn add @nestjs/typeorm typeorm pg
 ```
 
