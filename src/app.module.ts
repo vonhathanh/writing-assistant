@@ -4,6 +4,10 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Environment } from './enum';
+import { UserModule } from './user/user.module';
+import { BookModule } from './book/book.module';
+import { ChapterModule } from './chapter/chapter.module';
+import { CommentModule } from './comment/comment.module';
 
 // forRoot(): global initialization
 // - configure a module once for the whole app
@@ -31,6 +35,10 @@ import { Environment } from './enum';
       entities: [],
       synchronize: process.env.NODE_ENV == Environment.DEV,
     }),
+    UserModule,
+    BookModule,
+    ChapterModule,
+    CommentModule,
   ],
   // controllers: responsible for handling incoming requests and sending responses back to the client
   controllers: [AppController],
