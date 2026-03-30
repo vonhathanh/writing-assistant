@@ -33,4 +33,6 @@ $ yarn run test:cov
 ```
 ## Coding convention
 - Use nest cli to generate resource: module, class, controller...
-- Everything is camelCase: from database columns to class name, attribute...
+- Camel case: class name, class attribute (JS, TS convention)
+- Snake case: table name, column name because PostgreSQL folds all names - of tables, columns, functions and everything else - to lower case unless they're "double quoted".
+- Folder & api path: kebab-case because hyphens are easy to read in a URL and are universally supported across different systems and programming languages
