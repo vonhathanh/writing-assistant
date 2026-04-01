@@ -10,11 +10,12 @@ $ yarn add @nestjs/typeorm typeorm pg
 ```bash
 # development
 # we use swc for faster compilation
-$ yarn run start --b -b swc
+$ yarn run start
+# or
+$ nest start
 
 # watch mode
-$ yarn run start:dev --b -b swc
-
+$ yarn run start:dev
 # production mode
 $ yarn run start:prod
 ```
