@@ -1,10 +1,8 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { BaseEntity } from 'src/lib/abstract-class/baseEntity';
+import { Column, Entity, UpdateDateColumn } from 'typeorm';
 
 @Entity()
-export class User {
-  @PrimaryGeneratedColumn()
-  id: number;
-
+export class User extends BaseEntity {
   @Column()
   username: string;
 
@@ -14,11 +12,8 @@ export class User {
   @Column()
   email: string;
 
-  @Column()
-  createdAt: Date;
-
-  @Column()
-  updatedAt: Date;
+  @UpdateDateColumn()
+  updated_at: Date;
 
   @Column({ type: 'jsonb', default: null})
   metadata: any
