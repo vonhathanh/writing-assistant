@@ -1,8 +1,9 @@
-import { BaseEntity } from 'src/lib/abstract-class/baseEntity';
-import { Column, Entity, UpdateDateColumn } from 'typeorm';
+import { Book } from 'src/book/entities/book.entity';
+import { AbstractEntity } from 'src/lib/abstract-class/abtractEntity';
+import { Column, Entity, OneToMany, Relation, UpdateDateColumn } from 'typeorm';
 
 @Entity()
-export class User extends BaseEntity {
+export class User extends AbstractEntity {
   @Column()
   username: string;
 
@@ -15,6 +16,11 @@ export class User extends BaseEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @Column({ type: 'jsonb', default: null})
-  metadata: any
+  @Column({ type: 'jsonb', default: null })
+  metadata: any;
+
+  @OneToMany(() => Book, (book) => book.user, { onDelete: 'CASCADE' })
+  // we use Relation<Book[]> instead of Book[] to avoid circular dependency issues
+  // this only happens when we compile the code by swc
+  books: Relation<Book[]>; // 
 }
