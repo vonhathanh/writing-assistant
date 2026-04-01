@@ -10,7 +10,6 @@ import { ChapterModule } from './chapter/chapter.module';
 import { CommentModule } from './comment/comment.module';
 import { ReviewModule } from './review/review.module';
 import { ReadingHistoryModule } from './reading-history/reading-history.module';
-import { LibraryModule } from './library/library.module';
 import { PaymentModule } from './payment/payment.module';
 import { BookmarkModule } from './bookmark/bookmark.module';
 
@@ -46,7 +45,6 @@ import { BookmarkModule } from './bookmark/bookmark.module';
     CommentModule,
     ReviewModule,
     ReadingHistoryModule,
-    LibraryModule,
     PaymentModule,
     BookmarkModule,
   ],
