@@ -1,7 +1,7 @@
 import { Genre } from 'src/enum';
 import { AbstractEntity } from 'src/lib/abstract-class/abtractEntity';
 import { User } from 'src/user/entities/user.entity';
-import { Column, Entity, ManyToOne, Relation, UpdateDateColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, Relation, UpdateDateColumn } from 'typeorm';
 
 @Entity()
 export class Book extends AbstractEntity {
@@ -24,5 +24,6 @@ export class Book extends AbstractEntity {
   updated_at: Date;
 
   @ManyToOne(() => User, (user) => user.books)
+  @JoinColumn({ name: 'user_id' })
   user: Relation<User>;
 }
