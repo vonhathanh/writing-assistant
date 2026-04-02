@@ -1,3 +1,4 @@
+import { Bookmark } from 'src/bookmark/entities/bookmark.entity';
 import { Chapter } from 'src/chapter/entities/chapter.entity';
 import { Genre } from 'src/enum';
 import { AbstractEntity } from 'src/lib/abstract-class/abtractEntity';
@@ -30,4 +31,7 @@ export class Book extends AbstractEntity {
 
   @OneToMany(() => Chapter, (chapter) => chapter.book, { onDelete: 'CASCADE' })
   chapters: Relation<Chapter[]>;
+
+  @OneToMany(() => Bookmark, (bookmark) => bookmark.book)
+  bookmarks: Relation<Bookmark[]>;
 }

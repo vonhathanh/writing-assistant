@@ -1,4 +1,5 @@
 import { Book } from 'src/book/entities/book.entity';
+import { Bookmark } from 'src/bookmark/entities/bookmark.entity';
 import { Comment } from 'src/comment/entities/comment.entity';
 import { AbstractEntity } from 'src/lib/abstract-class/abtractEntity';
 import { Column, Entity, OneToMany, Relation } from 'typeorm';
@@ -24,4 +25,7 @@ export class User extends AbstractEntity {
 
   @OneToMany(() => Comment, (comment) => comment.user)
   comments: Relation<Comment[]>;
+
+  @OneToMany(() => Bookmark, (bookmark) => bookmark.user)
+  bookmarks: Relation<Bookmark[]>;
 }
