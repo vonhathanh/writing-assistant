@@ -1,6 +1,7 @@
 import { Book } from 'src/book/entities/book.entity';
+import { Comment } from 'src/comment/entities/comment.entity';
 import { AbstractEntity } from 'src/lib/abstract-class/abtractEntity';
-import { Column, Entity, JoinColumn, ManyToOne, Relation } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, Relation } from 'typeorm';
 
 @Entity()
 export class Chapter extends AbstractEntity {
@@ -19,4 +20,7 @@ export class Chapter extends AbstractEntity {
   @ManyToOne(() => Book, (book) => book.id, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'book_id' })
   book: Relation<Book>;
+
+  @OneToMany(() => Comment, (comment) => comment.chapter)
+  comments: Relation<Comment[]>;
 }
