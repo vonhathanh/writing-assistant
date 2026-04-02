@@ -2,6 +2,8 @@ import { Book } from 'src/book/entities/book.entity';
 import { Bookmark } from 'src/bookmark/entities/bookmark.entity';
 import { Comment } from 'src/comment/entities/comment.entity';
 import { AbstractEntity } from 'src/lib/abstract-class/abtractEntity';
+import { PaymentHistory } from 'src/payment/entities/payment-history.entity';
+import { PaymentMethod } from 'src/payment/entities/payment-method.entity';
 import { Column, Entity, OneToMany, Relation } from 'typeorm';
 
 @Entity()
@@ -28,4 +30,10 @@ export class User extends AbstractEntity {
 
   @OneToMany(() => Bookmark, (bookmark) => bookmark.user)
   bookmarks: Relation<Bookmark[]>;
+
+  @OneToMany(() => PaymentMethod, (paymentMethod) => paymentMethod.user)
+  paymentMethods: Relation<PaymentMethod[]>;
+
+  @OneToMany(() => PaymentHistory, (paymentHistory) => paymentHistory.user)
+  paymentHistories: Relation<PaymentHistory[]>;
 }
