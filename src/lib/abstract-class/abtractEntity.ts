@@ -1,12 +1,12 @@
-import {
-  PrimaryGeneratedColumn,
-  CreateDateColumn,
-} from 'typeorm';
+import { PrimaryGeneratedColumn, CreateDateColumn } from 'typeorm';
 
 export abstract class AbstractEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('identity')
   id: number;
 
-  @CreateDateColumn()
-  created_at: Date;
+  @CreateDateColumn({ name: 'created_at', type: 'timestamptz' })
+  createdAt: Date;
+
+  @CreateDateColumn({ name: 'updated_at', type: 'timestamptz' })
+  updatedAt: Date;
 }
