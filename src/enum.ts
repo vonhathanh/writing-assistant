@@ -1,7 +1,7 @@
 export const enum Environment {
   DEV = 'development',
   PROD = 'production',
-};
+}
 
 export enum Genre {
   FANTASY = 'Fantasy',
