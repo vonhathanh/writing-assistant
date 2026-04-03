@@ -1,5 +1,5 @@
-import { Book } from 'src/book/entities/book.entity';
-import { Comment } from 'src/comment/entities/comment.entity';
+import { Book } from 'src/modules/book/entities/book.entity';
+import { Comment } from 'src/modules/comment/entities/comment.entity';
 import { AbstractEntity } from 'src/lib/abstract-class/abtractEntity';
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, Relation } from 'typeorm';
 

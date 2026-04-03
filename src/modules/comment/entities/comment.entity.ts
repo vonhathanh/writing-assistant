@@ -1,6 +1,6 @@
-import { Chapter } from 'src/chapter/entities/chapter.entity';
+import { Chapter } from 'src/modules/chapter/entities/chapter.entity';
 import { AbstractEntity } from 'src/lib/abstract-class/abtractEntity';
-import { User } from 'src/user/entities/user.entity';
+import { User } from 'src/modules/user/entities/user.entity';
 import { Column, Entity, JoinColumn, ManyToOne, Relation } from 'typeorm';
 
 @Entity()

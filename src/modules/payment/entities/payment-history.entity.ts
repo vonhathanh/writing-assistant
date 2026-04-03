@@ -1,7 +1,7 @@
 import { BaselineEntity } from 'src/lib/abstract-class/abtractEntity';
-import { Check, Column, Entity, JoinColumn, ManyToOne, OneToOne, Relation } from 'typeorm';
+import { Check, Column, Entity, JoinColumn, ManyToOne, Relation } from 'typeorm';
 import { PaymentMethod } from './payment-method.entity';
-import { User } from 'src/user/entities/user.entity';
+import { User } from 'src/modules/user/entities/user.entity';
 import { PaymentStatus, PaymentType } from 'src/enum';
 
 @Entity()

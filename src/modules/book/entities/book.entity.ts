@@ -1,8 +1,8 @@
-import { Bookmark } from 'src/bookmark/entities/bookmark.entity';
-import { Chapter } from 'src/chapter/entities/chapter.entity';
+import { Bookmark } from 'src/modules/bookmark/entities/bookmark.entity';
+import { Chapter } from 'src/modules/chapter/entities/chapter.entity';
 import { Genre } from 'src/enum';
 import { AbstractEntity } from 'src/lib/abstract-class/abtractEntity';
-import { User } from 'src/user/entities/user.entity';
+import { User } from 'src/modules/user/entities/user.entity';
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, Relation } from 'typeorm';
 
 @Entity()

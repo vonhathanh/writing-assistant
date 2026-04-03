@@ -1,5 +1,5 @@
 import { AbstractEntity } from 'src/lib/abstract-class/abtractEntity';
-import { User } from 'src/user/entities/user.entity';
+import { User } from 'src/modules/user/entities/user.entity';
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, Relation } from 'typeorm';
 import { PaymentHistory } from './payment-history.entity';
 

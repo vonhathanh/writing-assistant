@@ -4,14 +4,14 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Environment } from './enum';
-import { UserModule } from './user/user.module';
-import { BookModule } from './book/book.module';
-import { ChapterModule } from './chapter/chapter.module';
-import { CommentModule } from './comment/comment.module';
-import { ReviewModule } from './review/review.module';
-import { ReadingHistoryModule } from './reading-history/reading-history.module';
-import { PaymentModule } from './payment/payment.module';
-import { BookmarkModule } from './bookmark/bookmark.module';
+import { UserModule } from './modules/user/user.module';
+import { BookModule } from './modules/book/book.module';
+import { ChapterModule } from './modules/chapter/chapter.module';
+import { CommentModule } from './modules/comment/comment.module';
+import { ReviewModule } from './modules/review/review.module';
+import { ReadingHistoryModule } from './modules/reading-history/reading-history.module';
+import { PaymentModule } from './modules/payment/payment.module';
+import { BookmarkModule } from './modules/bookmark/bookmark.module';
 
 // forRoot(): global initialization
 // - configure a module once for the whole app

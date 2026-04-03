@@ -1,9 +1,9 @@
-import { Book } from 'src/book/entities/book.entity';
-import { Bookmark } from 'src/bookmark/entities/bookmark.entity';
-import { Comment } from 'src/comment/entities/comment.entity';
+import { Book } from 'src/modules/book/entities/book.entity';
+import { Bookmark } from 'src/modules/bookmark/entities/bookmark.entity';
+import { Comment } from 'src/modules/comment/entities/comment.entity';
 import { AbstractEntity } from 'src/lib/abstract-class/abtractEntity';
-import { PaymentHistory } from 'src/payment/entities/payment-history.entity';
-import { PaymentMethod } from 'src/payment/entities/payment-method.entity';
+import { PaymentHistory } from 'src/modules/payment/entities/payment-history.entity';
+import { PaymentMethod } from 'src/modules/payment/entities/payment-method.entity';
 import { Column, Entity, OneToMany, Relation } from 'typeorm';
 
 @Entity()
