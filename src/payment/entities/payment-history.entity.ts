@@ -25,9 +25,11 @@ export class PaymentHistory extends BaselineEntity {
   @Column({ type: 'bigint', nullable: false })
   amount: number;
 
-  @OneToOne(() => PaymentMethod, { nullable: true })
+  @ManyToOne(() => PaymentMethod, (paymentMethod) => paymentMethod.paymentHistories, {
+    nullable: true,
+  })
   @JoinColumn({ name: 'payment_method_id' })
-  paymentMethod: PaymentMethod;
+  paymentMethod: Relation<PaymentMethod>;
 
   @ManyToOne(() => User, (user) => user.paymentHistories)
   @JoinColumn({ name: 'user_id' })

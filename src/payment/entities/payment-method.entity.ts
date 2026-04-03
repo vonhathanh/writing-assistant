@@ -1,6 +1,7 @@
 import { AbstractEntity } from 'src/lib/abstract-class/abtractEntity';
 import { User } from 'src/user/entities/user.entity';
-import { Column, Entity, JoinColumn, ManyToOne, Relation } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, Relation } from 'typeorm';
+import { PaymentHistory } from './payment-history.entity';
 
 export enum PaymentOption {
   CREDIT_CARD = 'credit_card',
@@ -34,4 +35,7 @@ export class PaymentMethod extends AbstractEntity {
   @ManyToOne(() => User, (user) => user.paymentMethods)
   @JoinColumn({ name: 'user_id' })
   user: Relation<User>;
+
+  @OneToMany(() => PaymentHistory, (paymentHistory) => paymentHistory.paymentMethod)
+  paymentHistories: Relation<PaymentHistory[]>;
 }
