@@ -1,10 +1,10 @@
 import { Chapter } from 'src/modules/chapter/entities/chapter.entity';
-import { AbstractEntity } from 'src/lib/abstract-class/abtractEntity';
+import { TimestampedEntity } from 'src/lib/abstract-class/abtractEntity';
 import { User } from 'src/modules/user/entities/user.entity';
 import { Column, Entity, JoinColumn, ManyToOne, Relation } from 'typeorm';
 
 @Entity()
-export class Comment extends AbstractEntity {
+export class Comment extends TimestampedEntity {
   @Column()
   content: string;
 

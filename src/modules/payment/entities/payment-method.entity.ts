@@ -1,4 +1,4 @@
-import { AbstractEntity } from 'src/lib/abstract-class/abtractEntity';
+import { TimestampedEntity } from 'src/lib/abstract-class/abtractEntity';
 import { User } from 'src/modules/user/entities/user.entity';
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, Relation } from 'typeorm';
 import { PaymentHistory } from './payment-history.entity';
@@ -11,7 +11,7 @@ export enum PaymentOption {
 }
 
 @Entity()
-export class PaymentMethod extends AbstractEntity {
+export class PaymentMethod extends TimestampedEntity {
   @Column({ name: 'user_id' })
   userId: number;
 

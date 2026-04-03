@@ -8,7 +8,7 @@ export abstract class BaselineEntity {
   createdAt: Date;
 }
 
-export abstract class AbstractEntity extends BaselineEntity {
+export abstract class TimestampedEntity extends BaselineEntity {
   @CreateDateColumn({ name: 'updated_at', type: 'timestamptz' })
   updatedAt: Date;
 }
