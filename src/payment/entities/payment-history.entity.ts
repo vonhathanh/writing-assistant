@@ -2,21 +2,7 @@ import { BaselineEntity } from 'src/lib/abstract-class/abtractEntity';
 import { Check, Column, Entity, JoinColumn, ManyToOne, OneToOne, Relation } from 'typeorm';
 import { PaymentMethod } from './payment-method.entity';
 import { User } from 'src/user/entities/user.entity';
-
-export enum PaymentType {
-  DEPOSIT = 'deposit',
-  WITHDRAWAL = 'withdrawal',
-  PURCHASE = 'purchase',
-  REFUND = 'refund',
-  DONATION = 'donation',
-}
-
-export enum PaymentStatus {
-  PROCESSING = 'processing',
-  COMPLETED = 'completed',
-  FAILED = 'failed',
-  CANCELED = 'canceled',
-}
+import { PaymentStatus, PaymentType } from 'src/enum';
 
 @Entity()
 @Check(`"amount" > 0`)
@@ -29,17 +15,18 @@ export class PaymentHistory extends BaselineEntity {
   @Column({ name: 'payment_method_id', nullable: true })
   paymentMethodId: number;
 
-  @Column({ name: 'payment_type', enum: PaymentType, nullable: false })
+  @Column({ name: 'payment_type', type: 'enum', enum: PaymentType, nullable: false })
   paymentType: PaymentType;
 
   // status = PROCESSING or CANCELLED only happens when the payment types are DEPOSIT, WITHDRAWAL
-  @Column({ enum: PaymentStatus, nullable: false })
+  @Column({ enum: PaymentStatus, type: 'enum', nullable: false })
   status: PaymentStatus;
 
   @Column({ type: 'bigint', nullable: false })
   amount: number;
 
   @OneToOne(() => PaymentMethod, { nullable: true })
+  @JoinColumn({ name: 'payment_method_id' })
   paymentMethod: PaymentMethod;
 
   @ManyToOne(() => User, (user) => user.paymentHistories)
