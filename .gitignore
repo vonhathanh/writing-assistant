@@ -22,3 +22,6 @@ lerna-debug.log*
 # temp directory
 .temp
 .tmp
+
+# MACOS specific
+.DS_Store
