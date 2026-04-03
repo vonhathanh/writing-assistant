@@ -5,6 +5,8 @@ import { TimestampedEntity } from 'src/lib/abstract-class/abtractEntity';
 import { PaymentHistory } from 'src/modules/payment/entities/payment-history.entity';
 import { PaymentMethod } from 'src/modules/payment/entities/payment-method.entity';
 import { Column, Entity, OneToMany, Relation } from 'typeorm';
+import { ReadingHistory } from 'src/modules/reading-history/entities/reading-history.entity';
+import { Review } from 'src/modules/review/entities/review.entity';
 
 @Entity()
 export class User extends TimestampedEntity {
@@ -36,4 +38,10 @@ export class User extends TimestampedEntity {
 
   @OneToMany(() => PaymentHistory, (paymentHistory) => paymentHistory.user)
   paymentHistories: Relation<PaymentHistory[]>;
+
+  @OneToMany(() => ReadingHistory, (readingHistory) => readingHistory.user)
+  readingHistories: Relation<ReadingHistory[]>;
+
+  @OneToMany(() => Review, (review) => review.user)
+  reviews: Relation<Review[]>;
 }
