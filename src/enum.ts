@@ -3,6 +3,12 @@ export const enum Environment {
   PROD = 'production',
 }
 
+export enum UserRole {
+  USER = 'user',
+  ADMIN = 'admin',
+  MODERATOR = 'moderator',
+}
+
 export enum Genre {
   FANTASY = 'Fantasy',
   SCIENCE_FICTION = 'Science Fiction',

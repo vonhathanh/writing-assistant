@@ -7,6 +7,7 @@ import { PaymentMethod } from 'src/modules/payment/entities/payment-method.entit
 import { Column, Entity, OneToMany, Relation } from 'typeorm';
 import { ReadingHistory } from 'src/modules/reading-history/entities/reading-history.entity';
 import { Review } from 'src/modules/review/entities/review.entity';
+import { UserRole } from 'src/enum';
 
 @Entity()
 export class User extends TimestampedEntity {
@@ -18,6 +19,9 @@ export class User extends TimestampedEntity {
 
   @Column()
   email: string;
+
+  @Column({ type: 'enum', enum: UserRole, default: UserRole.USER })
+  role: UserRole;
 
   @Column({ type: 'jsonb', default: null })
   metadata: any;
