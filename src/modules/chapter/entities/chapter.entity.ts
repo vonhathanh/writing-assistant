@@ -17,6 +17,9 @@ export class Chapter extends TimestampedEntity {
   @Column()
   content: string;
 
+  @Column({ type: 'int', default: 0 })
+  fee: number;
+
   @ManyToOne(() => Book, (book) => book.id, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'book_id' })
   book: Relation<Book>;
