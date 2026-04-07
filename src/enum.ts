@@ -11,13 +11,12 @@ export enum UserRole {
 
 export enum Genre {
   FANTASY = 'Fantasy',
-  SCIENCE_FICTION = 'Science Fiction',
-  MYSTERY = 'Mystery',
-  THRILLER = 'Thriller',
   ROMANCE = 'Romance',
-  WESTERN = 'Western',
-  DYSTOPIAN = 'Dystopian',
-  CONTEMPORARY = 'Contemporary',
+  MYSTERY = 'Mystery',
+  SCIENCE_FICTION = 'Science Fiction',
+  HORROR = 'Horror',
+  HISTORICAL = 'Historical',
+  ACTION = 'Action',
 }
 
 export enum PaymentType {
