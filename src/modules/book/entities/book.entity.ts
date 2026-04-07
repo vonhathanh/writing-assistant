@@ -30,6 +30,9 @@ export class Book extends TimestampedEntity {
   @Column({ type: 'float', default: 0 })
   rating: number;
 
+  @Column()
+  finished: boolean;
+
   @ManyToOne(() => User, (user) => user.books)
   @JoinColumn({ name: 'user_id' })
   user: Relation<User>;
