@@ -12,6 +12,7 @@ import { ReviewModule } from './modules/review/review.module';
 import { ReadingHistoryModule } from './modules/reading-history/reading-history.module';
 import { PaymentModule } from './modules/payment/payment.module';
 import { BookmarkModule } from './modules/bookmark/bookmark.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 // forRoot(): global initialization
 // - configure a module once for the whole app
@@ -47,6 +48,7 @@ import { BookmarkModule } from './modules/bookmark/bookmark.module';
     ReadingHistoryModule,
     PaymentModule,
     BookmarkModule,
+    AuthModule,
   ],
   // controllers: responsible for handling incoming requests and sending responses back to the client
   controllers: [AppController],

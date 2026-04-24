@@ -20,6 +20,11 @@ $ yarn run start:dev
 $ yarn run start:prod
 ```
 
+## Adding a new module in the modules directory
+```bash
+nest generate resouce modules/<module_name>
+```
+
 ## Run tests
 
 ```bash
