@@ -13,6 +13,7 @@ import { ReadingHistoryModule } from './modules/reading-history/reading-history.
 import { PaymentModule } from './modules/payment/payment.module';
 import { BookmarkModule } from './modules/bookmark/bookmark.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { GoogleStrategy } from './modules/auth/google.strategy';
 
 // forRoot(): global initialization
 // - configure a module once for the whole app
@@ -54,6 +55,6 @@ import { AuthModule } from './modules/auth/auth.module';
   controllers: [AppController],
   // services, repositories, factories, helpers... They can be injected as dependency. Nest handles the responsibility
   // of wiring up these objects together
-  providers: [AppService],
+  providers: [AppService, GoogleStrategy],
 })
 export class AppModule {}
