@@ -37,6 +37,23 @@ $ yarn run test:e2e
 # test coverage
 $ yarn run test:cov
 ```
+
+## Google OAuth flow
+1. Create an app in google cloud console
+2. Update Authorized JavaScript origins to: http://localhost:3000
+3. Update Authorized redirect URIs to: http://localhost:3000/auth/google/callback
+4. Update data access scope to email & profile info
+
+Frontend
+   ↓
+Backend → /auth/google
+   ↓
+Google SSO screen
+   ↓
+Backend callback (/auth/google/callback)
+   ↓
+Redirect to frontend
+
 ## Coding convention
 - Use nest cli to generate resource: module, class, controller...
 - Table naming: singular (maps cleanly to TypeORM entity)
